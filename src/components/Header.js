@@ -1,24 +1,12 @@
-import classes from './Header.module.css';
-
-const Header = () => {
-  return (
-    <header className={classes.header}>
-      <h1>Redux Auth</h1>
-      <nav>
-        <ul>
-          <li>
-            <a href='/'>My Products</a>
-          </li>
-          <li>
-            <a href='/'>My Sales</a>
-          </li>
-          <li>
-            <button>Logout</button>
-          </li>
-        </ul>
-      </nav>
-    </header>
-  );
-};
-
+import '../index.css'
+const Header =(props)=>{
+    return (
+        <header>
+       <div className='container'>
+            <h2>{props.text} </h2>
+        </div>
+        </header>
+ 
+    )
+}
 export default Header;
