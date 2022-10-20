@@ -1,12 +1,15 @@
-const Button =({children ,version, type,isDisabled})=>{
+const Button =({children ,onBlurChangeHandler,version, type,isDisabled,onClickHanler})=>{
 return (
     <div>
 
         <button 
-        type={type} 
+        type={type}
+        onBlur={onBlurChangeHandler}
        disabled={isDisabled}
+       onClick={onClickHanler}
         className ={`btn btn-${version}`}>
-            {children}</button>
+         {children}
+         </button>
     </div>
 )
 }
