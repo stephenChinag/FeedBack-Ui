@@ -1,3 +1,4 @@
+import{v4 as uuidv4} from 'uuid'
 import { Fragment,useState } from 'react';
 import FeedBackForm from './components/FeedBack/FeedBackForm.js';
 import FeedBackList from './components/FeedBack/FeedBackList.js';
@@ -6,6 +7,11 @@ import Header from './components/Header.js'
 import FeedBackData from './data/FeedBackData'
 function App() {
   const [feedBack,setFeedBack]=useState(FeedBackData)
+const handleAddFeedback=(newFeedBack)=>{
+  newFeedBack.id=uuidv4()
+setFeedBack([newFeedBack,...feedBack])
+}
+
 const deleteFeedBack=(id)=>{
   if (window.confirm("are you sure you want to delete the tag?")){
 
@@ -15,10 +21,15 @@ const deleteFeedBack=(id)=>{
 }
 return (
     <Fragment>
+      
     <Header text="FeedBack UI"/>
     <div className='container'>
-      <FeedBackForm/>
-      <FeedBackStats feedBack ={feedBack}/>
+     
+   
+      <FeedBackForm addFeedBack={handleAddFeedback}/>
+   
+    <FeedBackStats feedBack ={feedBack}/>
+      
     <FeedBackList feedBack = {feedBack} handelDelete={deleteFeedBack}/>
     </div>
   

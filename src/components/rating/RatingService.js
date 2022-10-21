@@ -1,19 +1,22 @@
 import { useState } from "react";
 
-const RatingService=()=>{
-   const [selected, setSelected]= useState(null)
-   const ratingHandler=(e)=>{
-console.log(e.target.value)
+const RatingService=({select})=>{
+   const [selected, setSelected]= useState()
+
+
+   const handleChange=(e)=>{
+    setSelected(+e.target.value)
+ select(e.target.value)
    }
 return(
-    <ul className="rating">
+     <ul className="rating">
         <li>
             <input
             type='radio'
             id="num1"
             name="rating"
             value='1'
-            onChange={ratingHandler}
+            onChange={handleChange}
             checked={selected===1}/>
             <label htmlFor="num1">1</label>
         </li>
@@ -23,7 +26,7 @@ return(
             id="num2"
             name="rating"
             value='2'
-            onChange={ratingHandler}
+            onChange={handleChange}
             checked={selected===2}/>
             <label htmlFor="num2">2</label>
         </li>
@@ -33,7 +36,7 @@ return(
             id="num3"
             name="rating"
             value='3'
-            onChange={ratingHandler}
+            onChange={handleChange}
             checked={selected===3}/>
             <label htmlFor="num3">3</label>
         </li>
@@ -43,7 +46,7 @@ return(
             id="num4"
             name="rating"
             value='4'
-            onChange={ratingHandler}
+            onChange={handleChange}
             checked={selected===4}/>
             <label htmlFor="num4">4</label>
         </li>
@@ -53,7 +56,7 @@ return(
             id="num5"
             name="rating"
             value='5'
-            onChange={ratingHandler}
+            onChange={handleChange}
             checked={selected===5}/>
             <label htmlFor="num5">5</label>
         </li>
@@ -63,51 +66,53 @@ return(
             id="num6"
             name="rating"
             value='6'
-            onChange={ratingHandler}
+            onChange={handleChange}
             checked={selected===6}/>
             <label htmlFor="num6">6</label>
         </li>
         <li>
             <input
             type='radio'
-            id="num7"
-            name="rating"
+            id='num7'
+            name='rating'
             value='7'
-            onChange={ratingHandler}
-            checked={selected===7}/>
-            <label htmlFor="num7">7</label>
+            onChange={handleChange}
+            checked={selected === 7}/>
+            <label htmlFor='num7'>7</label>
         </li>
         <li>
             <input
             type='radio'
-            id="num8"
-            name="rating"
+            id='num8'
+            name='rating'
             value='8'
-            onChange={ratingHandler}
+            onChange={handleChange}
             checked={selected===8}/>
-            <label htmlFor="num8">8</label>
+            <label htmlFor='num8'>8</label>
         </li>
         <li>
             <input
             type='radio'
-            id="num9"
-            name="rating"
+            id='num9'
+            name='rating'
             value='9'
-            onChange={ratingHandler}
+            onChange={handleChange}
             checked={selected===9}/>
-            <label htmlFor="num9">9</label>
+            <label htmlFor='num9'>9</label>
         </li>
         <li>
             <input
             type='radio'
-            id="num10"
-            name="rating"
+            id='num10'
+            name='rating'
             value='10'
-            onChange={ratingHandler}
+            onChange={handleChange}
             checked={selected===10}/>
-            <label htmlFor="num10">10</label>
+            <label htmlFor='num10'>10</label>
         </li>
+        
     </ul>
-)
+   
+   )
 }
 export default RatingService;
