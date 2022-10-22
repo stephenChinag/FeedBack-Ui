@@ -1,12 +1,12 @@
 import { useState } from "react";
 
 const RatingService=({select})=>{
-   const [selected, setSelected]= useState()
+   const [selected, setSelected]= useState(10)
 
 
    const handleChange=(e)=>{
     setSelected(+e.target.value)
- select(e.target.value)
+ select(+e.target.value)
    }
 return(
      <ul className="rating">

@@ -1,9 +1,9 @@
 import '../index.css'
-const Header =(props)=>{
+const Header =()=>{
     return (
         <header>
        <div className='container'>
-            <h2>{props.text} </h2>
+            <h2>FeedBack UI </h2>
         </div>
         </header>
  

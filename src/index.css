@@ -21,6 +21,7 @@ ul {
   max-width: 768px;
   margin: auto;
   padding: 0 20px;
+
 }
 
 header {
@@ -30,6 +31,9 @@ header {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
+  margin: auto;
+ 
+ 
 }
 
 .card {
@@ -189,7 +193,9 @@ input:focus {
  * document */
 .about-link {
   display: flex;
-  justify-content: flex-end;
+  justify-content: end;
+  
+  
 }
 
 /* FIX: Remove position: absolute to keep about icon at the bottom of the
@@ -197,6 +203,7 @@ input:focus {
 .about-link a {
   color: #fff;
   cursor: pointer;
+  padding-right: 30px;
 }
 
 .about-link a:hover {

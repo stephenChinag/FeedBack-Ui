@@ -15,7 +15,7 @@ const onChangeHandler=(event)=>{
     setDisableBtn(true)
     setMessage(null)
     }
-    else if (text ==='' && text.trim().length<=10)
+    else if (text ==='' ||text.trim().length<=10)
     {
         setDisableBtn(true)
         setMessage('please enter a string greater than 10 characters')
@@ -29,16 +29,21 @@ setText(event.target.value)
 }
 const handleSubmitEvent=(event)=>{
     event.preventDefault()
+   
+}
+const handleClick=()=>{
     if(text.trim().length>10){
         const rateText={
         text,
          rating,
         }
+        
         addFeedBack(rateText)
+        setText('')
+        setRating(10)
     }
+    
 }
-
-
 
 return (
     <Card>
@@ -54,7 +59,7 @@ return (
             placeholder='write your review'
             value={text}
             />
-           <Button  type="submit" isDisabled={disableBtn} version='primary' >Send</Button>
+           <Button onClickHanler={handleClick} type="submit" isDisabled={disableBtn} version='primary' >Send</Button>
             </div> 
             <p>{message}</p>   
 
