@@ -1,5 +1,5 @@
 import{v4 as uuidv4} from 'uuid'
-import {BrowserRouter as Router,Route,Routes}from 'react-router-dom'
+import {BrowserRouter as Router,NavLink,Route,Routes}from 'react-router-dom'
 import { useState } from 'react';
 import FeedBackForm from './components/FeedBack/FeedBackForm.js';
 import FeedBackList from './components/FeedBack/FeedBackList.js';
@@ -40,7 +40,8 @@ return (
     
     </Route>
     <Route path='/about' element={<Aboutpage/>}/>
-    <Route path='/about' element={<Post/>}/>
+    <Route path='/post' element={<Post/>}/>
+    
   
   </Routes>
   <AboutIcon/>
