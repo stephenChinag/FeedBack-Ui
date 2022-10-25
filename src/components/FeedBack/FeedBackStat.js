@@ -1,5 +1,8 @@
-const FeedBackStats=({feedBack})=>{
+import { useContext } from "react"
+import FeedBackContext from "../../context/FeedBackContext"
 
+const FeedBackStats=()=>{
+const {feedBack}= useContext(FeedBackContext)
 let average = feedBack.reduce((acc,cur)=>{
 return acc + cur.rating
 },0)/feedBack.length
